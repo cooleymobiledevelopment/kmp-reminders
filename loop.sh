@@ -7,6 +7,12 @@ MODE=${1:-build}
 MAX_ITERATIONS=${2:-100}
 ITERATION=0
 
+# Detect if running on Linux (skip iOS targets)
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export SKIP_IOS=true
+    echo "Linux detected - iOS targets will be skipped"
+fi
+
 echo "=== Ralph Wiggum Loop ==="
 echo "App: Reminders"
 echo "Mode: $MODE"
