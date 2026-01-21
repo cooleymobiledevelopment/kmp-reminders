@@ -118,7 +118,7 @@ if command -v claude &> /dev/null; then
     claude --version
 else
     echo "Installing Claude CLI..."
-    curl -fsSL https://claude.ai/install.sh | sh
+    curl -fsSL https://claude.ai/install.sh | bash
 
     # Add to PATH if needed
     if [ -d "$HOME/.claude/bin" ]; then
